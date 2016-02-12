@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/CI_27_12_2/';
+$config['base_url'] = 'http://localhost/GitHub/Blog';
 
 /*
 |--------------------------------------------------------------------------

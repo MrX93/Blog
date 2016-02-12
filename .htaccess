@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
-	RewriteBase /CI_27_12_2/
+	RewriteBase /Blog/
 	RewriteCond %{REQUEST_URI} ^system.*
 	RewriteRule ^(.*)$ /index.php?/$1 [L]
 	RewriteCond %{REQUEST_URI} ^application.*
