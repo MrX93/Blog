@@ -15,31 +15,19 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li>
-							<?php echo anchor('', 'Pocetna', 'title="Pocetna"'); ?>
-						</li>
-						<li>
-							<?php echo anchor('korisnik', 'Profil', 'title="Profil"'); ?>
-						</li>
-						<li>
-							<?php echo anchor('administracija', 'Administracija', 'title="Administracija"'); ?>
-						</li>
-						<li>
-							<?php echo anchor('logovanje/logout', 'Logout', 'title="Logout"'); ?>
-						</li>
-						<?php if (isset($link1)) { ?>
-						
-						<li>
-							<?php echo $link1; ?>
-						</li>
-						<li>
-							<?php echo $link2; ?>
-						</li>
-						<li>
-							<?php echo $link3; ?>
-						</li>
-						
-						<?php } ?>
+						<li><?php echo anchor('', 'Pocetna', 'title="Pocetna"'); ?></li>
+						<li><?php echo anchor('korisnik', 'Profil', 'title="Profil"'); ?></li>
+						<li><?php echo anchor('administracija', 'Administracija', 'title="Administracija"'); ?></li>
+						<li><?php echo anchor('logovanje/logout', 'Logout', 'title="Logout"'); ?></li>
+						<?php
+						if (isset($linkovi)) {
+							foreach ($linkovi as $link) {
+								?>
+								<li><?php echo $link; ?></li>
+								<?php
+							}
+						}
+						?>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

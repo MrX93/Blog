@@ -10,11 +10,7 @@ class Administracija extends CI_Controller {
 	}
 
 	public function index() {
-
-		$data = array();
-		$data['link1'] = anchor('administracija/unesi/korisnik', 'Edituj Korisnika');
-		$data['link2'] = anchor('administracija/unesi/uloga', 'Edituj Ulogu');
-		$data['link3'] = anchor('administracija/unesi/post', 'Edituj Post');
+		$data['linkovi'] = $this->_meni();
 
 		$this->load->view('head');
 		$this->load->view('navigation', $data);
@@ -23,10 +19,7 @@ class Administracija extends CI_Controller {
 	}
 
 	public function unesi($tip = NULL) {
-		$data = array();
-		$data['link1'] = anchor('administracija/unesi/korisnik', 'Edituj Korisnika');
-		$data['link2'] = anchor('administracija/unesi/uloga', 'Edituj Ulogu');
-		$data['link3'] = anchor('administracija/unesi/post', 'Edituj Post');
+		$data['linkovi'] = $this->_meni();
 
 		switch ($tip) {
 			case 'korisnik':
@@ -50,10 +43,7 @@ class Administracija extends CI_Controller {
 	}
 
 	public function izmeni($tip = NULL, $id = NULL) {
-		$data = array();
-		$data['link1'] = anchor('administracija/unesi/korisnik', 'Edituj Korisnika');
-		$data['link2'] = anchor('administracija/unesi/uloga', 'Edituj Ulogu');
-		$data['link3'] = anchor('administracija/unesi/post', 'Edituj Post');
+		$data['linkovi'] = $this->_meni();
 
 		$this->load->view('head');
 		$this->load->view('navigation', $data);
@@ -62,15 +52,20 @@ class Administracija extends CI_Controller {
 	}
 
 	public function brisanje($tip = NULL, $id = NULL) {
-		$data = array();
-		$data['link1'] = anchor('administracija/unesi/korisnik', 'Edituj Korisnika');
-		$data['link2'] = anchor('administracija/unesi/uloga', 'Edituj Ulogu');
-		$data['link3'] = anchor('administracija/unesi/post', 'Edituj Post');
+		$data['linkovi'] = $this->_meni();
 
 		$this->load->view('head');
 		$this->load->view('navigation', $data);
 		$this->load->view('content');
 		$this->load->view('footer');
+	}
+
+	public function _meni() {
+		$linkovi = array();
+		$linkovi[] = anchor('administracija/unesi/korisnik', 'Edituj Korisnika');
+		$linkovi[] = anchor('administracija/unesi/uloga', 'Edituj Ulogu');
+		$linkovi[] = anchor('administracija/unesi/post', 'Edituj Post');
+		return $linkovi;
 	}
 
 }
