@@ -13,6 +13,7 @@ class Korisnik extends CI_Controller {
 		$this->load->view('head');
 		$this->load->view('navigation');
 		$this->load->view('content');
+		$this->load->view('aside');
 		$this->load->view('footer');
 	}
 

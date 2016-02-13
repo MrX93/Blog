@@ -15,6 +15,7 @@ class Administracija extends CI_Controller {
 		$this->load->view('head');
 		$this->load->view('navigation', $data);
 		$this->load->view('content');
+		$this->load->view('aside');
 		$this->load->view('footer');
 	}
 
@@ -23,13 +24,10 @@ class Administracija extends CI_Controller {
 
 		switch ($tip) {
 			case 'korisnik':
-				echo 'korisnik';
 				break;
 			case 'uloga':
-				echo 'uloga';
 				break;
 			case 'post':
-				echo 'post';
 				break;
 
 			default:
@@ -38,7 +36,8 @@ class Administracija extends CI_Controller {
 
 		$this->load->view('head');
 		$this->load->view('navigation', $data);
-		$this->load->view('content');
+		$this->load->view('upravljanje');
+		$this->load->view('aside');
 		$this->load->view('footer');
 	}
 
@@ -48,6 +47,7 @@ class Administracija extends CI_Controller {
 		$this->load->view('head');
 		$this->load->view('navigation', $data);
 		$this->load->view('content');
+		$this->load->view('aside');
 		$this->load->view('footer');
 	}
 
@@ -57,6 +57,7 @@ class Administracija extends CI_Controller {
 		$this->load->view('head');
 		$this->load->view('navigation', $data);
 		$this->load->view('content');
+		$this->load->view('aside');
 		$this->load->view('footer');
 	}
 
