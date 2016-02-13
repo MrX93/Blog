@@ -62,9 +62,9 @@ class Administracija extends CI_Controller {
 
 	public function _meni() {
 		$linkovi = array();
-		$linkovi[] = anchor('administracija/unesi/korisnik', 'Edituj Korisnika');
-		$linkovi[] = anchor('administracija/unesi/uloga', 'Edituj Ulogu');
-		$linkovi[] = anchor('administracija/unesi/post', 'Edituj Post');
+		$linkovi[] = anchor('administracija/unesi/korisnik', 'Upravljanje korisnicima');
+		$linkovi[] = anchor('administracija/unesi/uloga', 'Upravljanje ulogama');
+		$linkovi[] = anchor('administracija/unesi/post', 'Upravljanje postovima');
 		return $linkovi;
 	}
 
