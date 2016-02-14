@@ -36,20 +36,73 @@
 								</td>
 							</tr>
 							<tr>
-								<td><input type="text" name="username" id="username" class="form-control" value="Pera" /></td>
-								<td><input type="text" name="password" id="password" class="form-control" value="Peric" /></td>
-								<td><input type="text" name="email" id="email" class="form-control" value="pera@gmail.com" /></td>
-								<td><input type="text" name="role" id="role" class="form-control" value="admin" /></td>
+								<?php echo form_open(''); ?>
 								<td>
-									<button type="button" class="btn btn-sm" aria-label="Left Align">
-										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-									</button>
+									<?php
+									$data = array(
+										'name' => 'username',
+										'id' => 'username',
+										'value' => 'Pera',
+										'class' => 'form-control',
+									);
+									echo form_input($data);
+									?>
 								</td>
 								<td>
-									<button type="button" class="btn btn-sm" aria-label="Left Align">
-										<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-									</button>
+									<?php
+									$data = array(
+										'name' => 'password',
+										'id' => 'password',
+										'value' => 'pera123',
+										'class' => 'form-control',
+									);
+									echo form_input($data);
+									?>
 								</td>
+								<td>
+									<?php
+									$data = array(
+										'name' => 'email',
+										'id' => 'email',
+										'value' => 'pera@gmail.com',
+										'class' => 'form-control',
+									);
+									echo form_input($data);
+									?>
+								</td>
+								<td>
+									<?php
+									$options = array(
+										'admin' => 'Admin',
+										'user' => 'User',
+									);
+									$params = 'id="uloga" class="form-control"';
+									echo form_dropdown('uloga', $options, 'user', $params);
+									?>
+								</td>
+								<td>
+									<?php
+									$data = array(
+										'name' => 'save',
+										'id' => 'save',
+										'type' => 'button',
+										'class' => 'btn btn-sm glyphicon glyphicon-ok',
+									);
+									echo form_button($data);
+									?>
+								</td>
+								<td>
+									<?php
+									$data = array(
+										'name' => 'delete',
+										'id' => 'delete',
+										'type' => 'button',
+										'class' => 'btn btn-sm glyphicon glyphicon-trash',
+									);
+									echo form_button($data);
+									?>
+								</td>
+								<?php echo form_close(); ?>
 							</tr>
 						</tbody>
 					</table>
