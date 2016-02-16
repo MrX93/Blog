@@ -22,21 +22,11 @@ class Administracija extends CI_Controller {
 	public function unesi($tip = NULL) {
 		$data['linkovi'] = $this->_meni();
 
-		switch ($tip) {
-			case 'korisnik':
-				break;
-			case 'uloga':
-				break;
-			case 'post':
-				break;
-
-			default:
-				break;
-		}
-
 		$this->load->view('head');
 		$this->load->view('navigation', $data);
-		$this->load->view('upravljanje');
+		if (isset($tip)) {
+			$this->load->view($tip);
+		}
 		$this->load->view('aside');
 		$this->load->view('footer');
 	}
