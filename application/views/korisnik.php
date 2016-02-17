@@ -1,6 +1,15 @@
 
 				<!-- Blog Entries Column -->
 				<div class="col-md-8">
+					
+					<?php if (isset($id)) : ?>
+						<div class="alert alert-success alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<strong>Uspeh</strong> Obrisali ste korisnika ciji je id <?php echo $id; ?>.
+						</div>
+					<?php endif; ?>
 
 					<h1 class="page-header">
 						Upravljanje korisnicima
@@ -145,7 +154,11 @@
 								<td>pera@gmail.com</td>
 								<td>admin</td>
 								<td>
-									<button type="button" class="btn btn-sm glyphicon glyphicon-trash" title="Obrisi"></button>
+									<?php
+									echo form_open('administracija/brisanje/korisnik');
+//									echo '<button type="button" class="btn btn-sm glyphicon glyphicon-trash" title="Obrisi"></button>';
+									echo form_submit('korisnik', 'Obrisi', 'class="btn btn-sm" title="Obrisi" name="1"');
+									echo form_close(); ?>
 								</td>
 							</tr>
 							
